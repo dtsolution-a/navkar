@@ -5,6 +5,7 @@ import ProductCategories from '../components/sections/ProductCategories';
 import AboutSnapshot from '../components/sections/AboutSnapshot';
 import WhyNavkar from '../components/sections/WhyNavkar';
 import StatsSection from '../components/sections/StatsSection';
+import IndustriesWeServe from '../components/sections/IndustriesWeServe';
 import Testimonials from '../components/sections/Testimonials';
 import CTASection from '../components/sections/CTASection';
 
@@ -24,6 +25,7 @@ export default function Home() {
         <AboutSnapshot />
         <WhyNavkar />
         <StatsSection />
+        <IndustriesWeServe />
         <Testimonials />
         <CTASection />
       </main>

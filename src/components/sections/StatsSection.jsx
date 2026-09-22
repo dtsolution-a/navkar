@@ -1,72 +1,33 @@
+
+import { Globe, Package, Users, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useScrollAnimation, staggerContainer, fadeUpVariants } from '../../hooks/useScrollAnimation';
-import { useCountUp } from '../../hooks/useCountUp';
-
-const stats = [
-  { target: 30, suffix: '+', label: 'Years of Experience', description: 'Founded in 1995' },
-  { target: 7, suffix: '+', label: 'Global Brands', description: 'Authorized distributor' },
-  { target: 500, suffix: '+', label: 'Products', description: 'Across all categories' },
-  { target: 5800, suffix: '+', label: 'Satisfied Clients', description: 'Pan-India presence' },
-];
-
-function StatItem({ target, suffix, label, description, delay }) {
-  const { count, ref } = useCountUp(target, 1800, delay);
-  return (
-    <div ref={ref} className="text-center">
-      <div className="stat-number text-white">
-        {count}{suffix}
-      </div>
-      <div className="text-base font-semibold text-white/90 mt-1">{label}</div>
-      <div className="text-sm text-white/50 mt-0.5">{description}</div>
-    </div>
-  );
-}
+import { staggerContainer, staggerItem } from '../../hooks/useScrollAnimation';
 
 export default function StatsSection() {
-  const { ref, isInView } = useScrollAnimation();
+  const stats = [
+    { num: '4+', label: 'Global Brands', icon: Globe },
+    { num: '500+', label: 'Products', icon: Package },
+    { num: '500+', label: 'Clients', icon: Users },
+    { num: '24h', label: 'Response', icon: Clock },
+  ];
 
   return (
-    <section className="section-padding bg-[#060f38] dark:bg-gray-950 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
-
-      {/* Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent/10 rounded-full blur-[100px]" />
-
-      <div className="container-wide relative">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={fadeUpVariants}
-          className="text-center mb-14"
-        >
-          <p className="text-xs font-semibold text-accent tracking-[0.15em] uppercase mb-3">Numbers That Matter</p>
-          <h2 className="heading-display text-[clamp(1.8rem,3.5vw,2.8rem)] text-white mb-4">
-            Proven Track Record of Excellence
-          </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            Our numbers tell the story of trust, reliability and commitment across India's industrial landscape.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={staggerContainer}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
-        >
-          {stats.map(({ target, suffix, label, description }, i) => (
-            <StatItem
-              key={label}
-              target={target}
-              suffix={suffix}
-              label={label}
-              description={description}
-              delay={i * 100}
-            />
-          ))}
+    <section className="py-16 bg-[#0a1a5c] relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(0,180,216,1)_0%,transparent_100%)]" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <motion.div key={i} variants={staggerItem} className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-[#00b4d8]" />
+                </div>
+                <div className="text-4xl font-bold text-white mb-2">{s.num}</div>
+                <div className="text-sm font-medium text-gray-300 uppercase tracking-wider">{s.label}</div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

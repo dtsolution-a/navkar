@@ -1,175 +1,51 @@
-﻿import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { useScrollAnimation, staggerContainer, staggerItem } from '../../hooks/useScrollAnimation';
-import { useBrands } from '../../hooks/useSiteData';
 
-// Static fallback brand data for Navkar
-const brandData = [
-  {
-    id: 'kaishan',
-    name: 'Kaishan',
-    logo: '/images/brands/kaishan.png',
-    description: 'World-Class Air Compressors',
-    href: '/products/kaishan',
-    bg: 'bg-white',
-    border: 'border-gray-200 hover:border-red-300',
-    isImg: true,
-    badgeType: 'dealer',
-    badgeLabel: 'Authorized Dealership',
-  },
-  {
-    id: 'airmarshall',
-    name: 'Airmarshall',
-    logo: '/images/brands/airmarshall.png',
-    description: 'Compressed Air Solutions',
-    href: '/products/airmarshall',
-    bg: 'bg-white',
-    border: 'border-gray-200 hover:border-blue-300',
-    isImg: true,
-    badgeType: 'dealer',
-    badgeLabel: 'Authorized Dealership',
-  },
-  {
-    id: 'parker',
-    name: 'Parker Hannifin',
-    logo: '/images/brands/parker.jpg',
-    description: 'Fortune 250 · Motion & Control',
-    href: '/products/parker',
-    bg: 'bg-white',
-    border: 'border-gray-200 hover:border-yellow-300',
-    isImg: true,
-    badgeType: 'deals',
-    badgeLabel: 'We Deal With',
-  },
-  {
-    id: 'airnet',
-    name: 'Airnet',
-    logo: '/images/brands/airnet.png',
-    description: 'Aluminium Piping Systems',
-    href: '/products/airnet',
-    bg: 'bg-white',
-    border: 'border-gray-200 hover:border-cyan-300',
-    isImg: true,
-    badgeType: 'deals',
-    badgeLabel: 'We Deal With',
-  },
-  {
-    id: 'tubacex',
-    name: 'Tubacex',
-    logo: '/images/brands/tubacex.png',
-    description: 'Premium SS Tubes & Pipes',
-    href: '/products/tubacex',
-    bg: 'bg-white',
-    border: 'border-gray-200 hover:border-green-300',
-    isImg: true,
-    badgeType: 'deals',
-    badgeLabel: 'We Deal With',
-  },
-  {
-    id: 'trident',
-    name: 'Trident',
-    logo: '/images/brands/trident.png',
-    description: 'Air Purification Systems',
-    href: '/products/trident',
-    bg: 'bg-white',
-    border: 'border-gray-200 hover:border-indigo-300',
-    isImg: true,
-    badgeType: 'deals',
-    badgeLabel: 'We Deal With',
-  },
+import { useBrands } from '../../hooks/useSiteData';
+import { motion } from 'framer-motion';
+
+const fallbackBrands = [
+  { id: 'kaishan', name: 'Kaishan', logo: '/images/brands/kaishan.png', badge: 'Authorized Dealership' },
+  { id: 'airmarshall', name: 'Airmarshall', logo: '/images/navkar-logo.png', badge: 'Authorized Dealership' },
+  { id: 'parker', name: 'Parker', logo: '/images/brands/parker.jpg', badge: 'We Deal With' },
+  { id: 'airnet', name: 'Airnet', logo: '/images/brands/chicago-pneumatic.svg', badge: 'We Deal With' },
+  { id: 'tubacex', name: 'Tubacex', logo: '/images/brands/tubacex.png', badge: 'We Deal With' },
+  { id: 'trident', name: 'Trident', logo: '/images/brands/trident.png', badge: 'We Deal With' },
 ];
 
 export default function BrandBar() {
-  const { ref, isInView } = useScrollAnimation();
-  const { brands: dbBrands } = useBrands();
-
-  const activeBrands = dbBrands && dbBrands.length > 0
-    ? dbBrands.filter(b => b.is_active !== 0).map(b => ({
-        id: b.id,
-        name: b.name,
-        logo: b.logo,
-        description: b.tagline || b.description || '',
-        href: `/products/${b.id}`,
-        bg: 'bg-white',
-        border: 'border-gray-200 hover:border-accent',
-        isImg: true,
-        badgeType: b.badge_type || 'deals',
-        badgeLabel: b.badge_label || 'We Deal With',
-      }))
-    : brandData;
+  const { brands } = useBrands();
+  const activeBrands = brands && brands.length > 0 ? brands.filter(b => b.is_active) : fallbackBrands;
+  
+  // Duplicate for seamless marquee
+  const marqueeItems = [...activeBrands, ...activeBrands, ...activeBrands];
 
   return (
-    <section className="section-padding-sm border-b border-[var(--color-border)] bg-gray-50 dark:bg-gray-900/40">
-      <div className="container-wide">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={staggerContainer}
+    <section className="py-12 bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-900 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+        <h3 className="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em]">Our Trusted Network</h3>
+      </div>
+      
+      <div className="relative w-full flex items-center">
+        {/* Gradient Edges for fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
+        
+        <motion.div 
+          className="flex gap-12 whitespace-nowrap px-6"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 30, repeat: Infinity }}
         >
-          {/* Label */}
-          <motion.p
-            variants={staggerItem}
-            className="text-center text-[11px] font-semibold text-gray-400 dark:text-gray-600 uppercase tracking-[0.18em] mb-8"
-          >
-            Authorized Dealership &amp; Our Brands
-          </motion.p>
-
-          {/* Brand cards */}
-          <motion.div
-            variants={staggerContainer}
-            className="flex flex-wrap justify-center gap-3"
-          >
-            {activeBrands.map((brand) => (
-              <motion.div
-                key={brand.id}
-                variants={staggerItem}
-                className="w-[calc(50%-6px)] sm:w-[calc(33.333%-8px)] lg:w-[calc(16.666%-10px)] flex-shrink-0"
-              >
-                <Link
-                  to={brand.href}
-                  className={`group flex flex-col items-center justify-center gap-2 px-4 py-5 rounded-2xl border h-full
-                    ${brand.bg} ${brand.border}
-                    transition-all duration-300 hover:shadow-card-hover hover:-translate-y-0.5`}
-                >
-                  {/* Badge */}
-                  <span
-                    className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                      brand.badgeType === 'dealer'
-                        ? 'bg-accent/10 text-accent'
-                        : 'bg-primary-600/10 text-primary-600 dark:text-accent/80'
-                    }`}
-                  >
-                    {brand.badgeLabel}
-                  </span>
-
-                  {/* Logo image */}
-                  <div className="h-14 flex items-center justify-center w-full px-3 py-2 bg-white rounded-xl shadow-sm border border-gray-100">
-                    <img
-                      src={brand.logo}
-                      alt={`${brand.name} logo`}
-                      className="max-w-full max-h-10 object-contain transition-all duration-300 opacity-100"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextElementSibling.style.display = 'block';
-                      }}
-                    />
-                    <span className="hidden text-base font-black text-gray-700 tracking-tight">
-                      {brand.name}
-                    </span>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-[10px] text-gray-500 font-medium text-center leading-tight group-hover:text-gray-700 transition-colors">
-                    {brand.description}
-                  </p>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
+          {marqueeItems.map((brand, idx) => (
+            <div key={`${brand.id}-${idx}`} className="flex flex-col items-center justify-center min-w-[180px] group opacity-60 hover:opacity-100 transition-opacity duration-300">
+              <div className="h-16 flex items-center justify-center mb-3 bg-white p-2 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 dark:bg-gray-900">
+                <img src={brand.logo} alt={brand.name} className="max-h-10 max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
+              </div>
+              <span className="text-[10px] font-bold tracking-widest text-gray-400 group-hover:text-accent uppercase">
+                {brand.badgeType === 'dealer' || brand.badge?.includes('Authorized') ? 'Authorized Dealer' : 'We Deal With'}
+              </span>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
   );
 }
-
