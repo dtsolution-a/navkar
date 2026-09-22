@@ -1,0 +1,24 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerEnabled On
+PassengerAppType node
+PassengerAppEnv production
+PassengerAppRoot /home/shahgroup/shah-api
+PassengerBaseURI /api
+PassengerNode /home/shahgroup/nodevenv/shah-api/22/bin/node
+PassengerStartupFile server/app.cjs
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  
+  # Exclude /api routes (and /api/uploads) from SPA redirect
+  RewriteCond %{REQUEST_URI} ^/api [NC]
+  RewriteRule . - [L]
+  
+  # Redirect all other non-file and non-directory requests to index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

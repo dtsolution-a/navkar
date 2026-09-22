@@ -1,0 +1,14 @@
+{
+  "name": "Shah Selection Tool",
+  "short_name": "Selection Tool",
+  "description": "Offline equipment diagnostics and quoting tool for Shah Group salesmen.",
+  "start_url": "/selection-tool",
+  "scope": "/selection-tool/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#2563EB",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

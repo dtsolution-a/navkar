@@ -1,0 +1,15 @@
+# Nixpacks config — tells Railway exactly how to build this project
+
+[phases.setup]
+nixPkgs = ["nodejs_22"]
+
+[phases.install]
+# Use npm install (not npm ci) to avoid lockfile strictness issues
+cmds = ["npm install --legacy-peer-deps"]
+
+[phases.build]
+# No frontend build needed on Railway (backend only)
+cmds = []
+
+[start]
+cmd = "node server/index.js"

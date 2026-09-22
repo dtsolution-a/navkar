@@ -1,0 +1,44 @@
+<!-- Light mode full-colour Shah logo (used in light backgrounds) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 130" fill="none">
+  <defs>
+    <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a4fa0"/>
+      <stop offset="45%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="wg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="55%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.08"/>
+    </linearGradient>
+    <!-- Clip for curved bottom text -->
+    <clipPath id="clip-circle">
+      <circle cx="64" cy="64" r="57"/>
+    </clipPath>
+  </defs>
+
+  <!-- Circle background -->
+  <circle cx="64" cy="64" r="60" fill="url(#cg)"/>
+  <!-- Glossy inner highlight -->
+  <ellipse cx="64" cy="38" rx="36" ry="22" fill="white" fill-opacity="0.12"/>
+  <!-- S mark -->
+  <text x="64" y="83" font-family="'Arial Black',Arial,sans-serif" font-size="72" font-weight="900" text-anchor="middle" fill="white">S</text>
+  <!-- Tagline arc (simplified horizontal at bottom of circle) -->
+  <text x="64" y="122" font-family="Georgia,'Times New Roman',serif" font-size="7.5" font-style="italic" text-anchor="middle" fill="white" opacity="0.82" letter-spacing="0.3">Adding wings to your vision</text>
+
+  <!-- Vertical divider -->
+  <line x1="138" y1="18" x2="138" y2="112" stroke="#1e3a8a" stroke-opacity="0.2" stroke-width="1.5"/>
+
+  <!-- Since 1995 -->
+  <text x="152" y="28" font-family="Georgia,'Times New Roman',serif" font-size="13" font-style="italic" fill="#374151" letter-spacing="0.4">Since 1995</text>
+
+  <!-- SHAH wordmark -->
+  <text x="150" y="84" font-family="'Arial Black',Arial,sans-serif" font-size="58" font-weight="900" fill="url(#wg)" letter-spacing="3">SHAH</text>
+
+  <!-- Engineers & Consultants Private Limited -->
+  <text x="152" y="108" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#374151" letter-spacing="0.5">Engineers &amp; Consultants Private Limited</text>
+</svg>
