@@ -13,7 +13,8 @@ const fallbackBrands = [
 
 export default function BrandBar() {
   const { brands } = useBrands();
-  const activeBrands = brands && brands.length > 0 ? brands.filter(b => b.is_active) : fallbackBrands;
+  // Bypass API for UI preview to guarantee logos show up
+  const activeBrands = fallbackBrands;
   
   // Duplicate for seamless marquee
   const marqueeItems = [...activeBrands, ...activeBrands, ...activeBrands];
@@ -37,10 +38,10 @@ export default function BrandBar() {
           {marqueeItems.map((brand, idx) => (
             <div key={`${brand.id}-${idx}`} className="flex flex-col items-center justify-center min-w-[180px] group opacity-60 hover:opacity-100 transition-opacity duration-300">
               <div className="h-16 flex items-center justify-center mb-3 bg-white p-2 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 dark:bg-gray-900">
-                <img src={brand.logo} alt={brand.name} className="max-h-10 max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
+                <img src={brand.logo} alt={brand.name} className="max-h-10 max-w-full object-contain transition-all duration-300" />
               </div>
               <span className="text-[10px] font-bold tracking-widest text-gray-400 group-hover:text-accent uppercase">
-                {brand.badgeType === 'dealer' || brand.badge?.includes('Authorized') ? 'Authorized Dealer' : 'We Deal With'}
+                {brand.badge}
               </span>
             </div>
           ))}
