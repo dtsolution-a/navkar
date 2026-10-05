@@ -5,19 +5,19 @@ import { fadeUpVariants, staggerContainer, staggerItem } from '../../hooks/useSc
 
 const testimonials = [
   {
-    name: "Rajesh Patel",
-    company: "Gujarat Chemicals Ltd.",
-    text: "Navkar Engineering has been our trusted partner for 5 years. Their knowledge of Parker pneumatics is unmatched, and their after-sales support ensures our plant runs without downtime."
+    name: "Mr. Vikesh Verma",
+    company: "AGM Operations",
+    text: "Navkar Engineering has been a dependable partner for our pneumatic and hydraulic requirements. Their team provides suitable products, technical assistance and timely support for our maintenance needs."
   },
   {
-    name: "Amit Desai",
-    company: "Desai Textiles",
-    text: "We procured our entire Kaishan compressor setup from them. The team helped us calculate the exact CFM needed, saving us 20% in energy costs. Highly recommended!"
+    name: "Mr. Amit Agarwal",
+    company: "Plant Head",
+    text: "Good experience with Navkar Engineering. Their service team is responsive, knowledgeable and ensures proper follow-up for compressor maintenance and requirements."
   },
   {
-    name: "Vikram Singh",
-    company: "Singh Pharma",
-    text: "Genuine products, transparent pricing, and instant delivery. Whenever we need critical fluid power components, Navkar is our first call."
+    name: "Mr. Ramesh Krishnan",
+    company: "Sr. Maintenance Manager",
+    text: "We appreciate the prompt response and technical support from Navkar Engineering. Their team understands compressed-air systems well and provides practical solutions."
   }
 ];
 

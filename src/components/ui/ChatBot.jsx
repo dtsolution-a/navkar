@@ -76,7 +76,7 @@ const FAQS = [
       },
       {
         q: 'Do you offer operator training?',
-        a: 'Yes. We provide on-site and office-based operator training on safe operation, daily maintenance routines, safety checks, and basic troubleshooting. Contact **info@navkarengineering.com** to schedule.'
+        a: 'Yes. We provide on-site and office-based operator training on safe operation, daily maintenance routines, safety checks, and basic troubleshooting. Contact **info@navkarengg.in** to schedule.'
       },
       {
         q: 'Do you provide remote monitoring for compressors?',
@@ -102,7 +102,7 @@ const FAQS = [
       },
       {
         q: 'What makes Navkar Engineers different from others?',
-        a: '• **30+ Years** of industry experience\n• **5,800+ Happy Customers** (Reliance, L&T, Adani)\n• **World-Class Brands** under one roof\n• **Pan-India Presence** (144 cities, 5 offices)\n• **ISO 9001:2015** certified and **SMERA SME 1** rating\n• **300+ Trained Engineers** for sales, service, and AMC'
+        a: '• **2+ Years** of industry experience\n• **5,800+ Happy Customers** (Reliance, L&T, Adani)\n• **World-Class Brands** under one roof\n• **Pan-India Presence** (144 cities, 5 offices)\n• **ISO 9001:2015** certified and **SMERA SME 1** rating\n• **300+ Trained Engineers** for sales, service, and AMC'
       },
       {
         q: 'What certifications does your company hold?',
@@ -110,7 +110,7 @@ const FAQS = [
       },
       {
         q: 'How many years of experience do you have?',
-        a: 'We have **30+ years** of technical experience in compressed air and gas generation systems. Established in 1995, we\'ve grown to serve thousands of clients across India.'
+        a: 'We have **2+ years** of technical experience in compressed air and gas generation systems. Established in 1995, we\'ve grown to serve thousands of clients across India.'
       },
       {
         q: 'Which industries do you serve?',
@@ -132,19 +132,19 @@ const FAQS = [
       },
       {
         q: 'Can I get a quotation?',
-        a: 'Yes! Please share: (1) Product/Application, (2) Flow (CFM/LPM), (3) Pressure (Bar/PSI), (4) Power supply (Voltage/Phase), (5) Industry type. Email: **info@navkarengineering.com** or call **(0261) 4890982**.'
+        a: 'Yes! Please share: (1) Product/Application, (2) Flow (CFM/LPM), (3) Pressure (Bar/PSI), (4) Power supply (Voltage/Phase), (5) Industry type. Email: **info@navkarengg.in** or call **(0261) 4890982**.'
       },
       {
         q: 'Do you provide AMC or CMC quotations?',
-        a: 'Yes. We offer customized AMC and CMC quotes for all brands we represent as well as third-party equipment. Please email your equipment details to **info@navkarengineering.com**.'
+        a: 'Yes. We offer customized AMC and CMC quotes for all brands we represent as well as third-party equipment. Please email your equipment details to **info@navkarengg.in**.'
       },
       {
         q: 'How can I contact your sales team?',
-        a: '• **Phone**: (0261) 4890982, 983, 984\n• **Email**: info@navkarengineering.com\n• **Head Office**: 4, RUSHABH, Khatodara, Ring Road, Surat – 395 002, Gujarat.\n• Branches in Ankleshwar, Vapi, Ahmedabad, Delhi, Pune, Kolkata, Chennai.'
+        a: '• **Phone**: (0261) 4890982, 983, 984\n• **Email**: info@navkarengg.in\n• **Head Office**: 4, RUSHABH, Khatodara, Ring Road, Surat – 395 002, Gujarat.\n• Branches in Ankleshwar, Vapi, Ahmedabad, Delhi, Pune, Kolkata, Chennai.'
       },
       {
         q: 'Can I schedule a meeting or product demo?',
-        a: 'Yes, absolutely! Contact us at **(0261) 4890982** or email **info@navkarengineering.com** with your preferred date, time, and location, and our engineers will arrange a visit or demo.'
+        a: 'Yes, absolutely! Contact us at **(0261) 4890982** or email **info@navkarengg.in** with your preferred date, time, and location, and our engineers will arrange a visit or demo.'
       },
       {
         q: 'Do you provide technical support before purchase?',
@@ -255,13 +255,13 @@ export default function ChatBot() {
     if (match) {
       sendBotMessage(match.a);
     } else if (lower.includes('price') || lower.includes('cost') || lower.includes('rate') || lower.includes('quote')) {
-      sendBotMessage("For accurate pricing, please fill our enquiry form or contact us directly — our team responds within 24 hours.\n\n📧 **info@navkarengineering.com**\n📍 Surat, Gujarat");
+      sendBotMessage("For accurate pricing, please fill our enquiry form or contact us directly — our team responds within 24 hours.\n\n📧 **info@navkarengg.in**\n📍 Surat, Gujarat");
     } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
       sendBotMessage("Hello! 😊 Great to hear from you. How can I help you today? You can ask about our products, services, or use the quick buttons below.", 500);
     } else if (lower.includes('thank')) {
       sendBotMessage("You're most welcome! 😊 Is there anything else I can help you with?", 600);
     } else {
-      sendBotMessage("I'm not sure about that specific query. For detailed assistance, please:\n\n📞 **Call us directly**\n📧 **Email:** info@navkarengineering.com\n\nOr use the quick topics below to find what you need!");
+      sendBotMessage("I'm not sure about that specific query. For detailed assistance, please:\n\n📞 **Call us directly**\n📧 **Email:** info@navkarengg.in\n\nOr use the quick topics below to find what you need!");
     }
   };
 

@@ -129,7 +129,7 @@ function HeroOption2() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#020512]/90 via-transparent to-[#020512] z-10" />
       <div className="relative z-20 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center -mt-10">
         <p className="text-[#00b4d8] tracking-[0.3em] uppercase text-xs md:text-sm font-bold mb-6 flex items-center gap-4">
-          <span className="w-8 h-[1px] bg-[#00b4d8]/50" /> Navkar Engineering • Est. 1994 <span className="w-8 h-[1px] bg-[#00b4d8]/50" />
+          <span className="w-8 h-[1px] bg-[#00b4d8]/50" /> Navkar Engineering • Est. 2024 <span className="w-8 h-[1px] bg-[#00b4d8]/50" />
         </p>
         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-white mb-6 tracking-tight leading-[1.1]">
           Architecting industrial <br /> landscapes that are <br />

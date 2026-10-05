@@ -94,13 +94,13 @@ export default function Footer() {
 
                 <div className="space-y-2">
                   <p className="text-white text-xs font-semibold uppercase tracking-wider">General Inquiry:</p>
-                  <a href="mailto:info@navkarengineering.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                  <a href="mailto:info@navkarengg.in" className="flex items-center gap-3 hover:text-white transition-colors">
                     <Mail className="w-4 h-4 flex-shrink-0 text-gray-600" />
-                    info@navkarengineering.com
+                    info@navkarengg.in
                   </a>
                   <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-3 hover:text-white transition-colors">
                     <Phone className="w-4 h-4 flex-shrink-0 text-gray-600" />
-                    +91 XXXXXXXXXX
+                    +91 90227 25714
                   </a>
                 </div>
               </div>

@@ -81,7 +81,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Office Address</h3>
                     <a 
-                      href="https://maps.app.goo.gl/aifRXENXkVHk2t7Q6" 
+                      href="https://maps.app.goo.gl/ALBGHsNeMGcUNXqq9" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed hover:text-accent hover:underline block"
@@ -124,7 +124,7 @@ export default function Contact() {
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Email Us</h3>
                     
                     <p className="text-xs text-gray-500 mb-0.5 font-medium uppercase">General Inquiry:</p>
-                    <a href="mailto:info@navkarengineering.com" className="text-accent text-sm hover:underline block mb-3">info@navkarengineering.com</a>
+                    <a href="mailto:info@navkarengg.in" className="text-accent text-sm hover:underline block mb-3">info@navkarengg.in</a>
 
                     <p className="text-xs text-gray-500 mb-0.5 font-medium uppercase">Parker-Instrumentation:</p>
                     <a href="mailto:support.inst@navkarengineering.com" className="text-accent text-sm hover:underline block mb-3">support.inst@navkarengineering.com</a>
@@ -159,7 +159,7 @@ export default function Contact() {
                 />
                 <iframe
                   title="Navkar Engineering Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5551.397596126179!2d72.82444641222176!3d21.1799068804263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e6a635d99b5%3A0x2aa005ed2ab85209!2sNavkar%20Engineers%20%26%20Consultants%20Private%20Limited!5e1!3m2!1sen!2sin!4v1782208019217!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.8256555147573!2d73.0016027!3d19.0713917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c13e54b60ccf%3A0x7d674b78082987fb!2sF-48%2C%20APMC%20Market%2C%20Sector%2019%2C%20Vashi%2C%20Navi%20Mumbai%2C%20Maharashtra%20400703!5e1!3m2!1sen!2sin!4v1782208019217!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

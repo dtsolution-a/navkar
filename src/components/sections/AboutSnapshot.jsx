@@ -18,7 +18,7 @@ export default function AboutSnapshot() {
               <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[#00b4d8] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    30+
+                    2+
                   </div>
                   <div>
                     <h4 className="font-bold text-[#0a1a5c]">Years of Trust</h4>

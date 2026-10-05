@@ -3,12 +3,14 @@ import { useBrands } from '../../hooks/useSiteData';
 import { motion } from 'framer-motion';
 
 const fallbackBrands = [
-  { id: 'kaishan', name: 'Kaishan', logo: '/images/brands/kaishan.png', badge: 'Authorized Dealership' },
-  { id: 'airmarshall', name: 'Airmarshall', logo: '/images/navkar-logo.png', badge: 'Authorized Dealership' },
-  { id: 'parker', name: 'Parker', logo: '/images/brands/parker.jpg', badge: 'We Deal With' },
-  { id: 'airnet', name: 'Airnet', logo: '/images/brands/chicago-pneumatic.svg', badge: 'We Deal With' },
-  { id: 'tubacex', name: 'Tubacex', logo: '/images/brands/tubacex.png', badge: 'We Deal With' },
-  { id: 'trident', name: 'Trident', logo: '/images/brands/trident.png', badge: 'We Deal With' },
+  { id: 'kaishan', name: 'Kaishan Machinery (I) Pvt. Ltd.', logo: '/images/brands/kaishan.png', badge: 'Authorized Dealer' },
+  { id: 'airmarshal', name: 'Air Marshal- Gajjar Compressors Pvt. Ltd.', logo: '/images/navkar-logo.png', badge: 'Authorized Dealer' },
+  { id: 'airgrid', name: 'AirGrid Compressed Air Aluminum Piping', logo: '/images/navkar-logo.png', badge: 'Authorized Dealer' },
+  { id: 'parker', name: 'Parker Hannifin India Pvt. Ltd.', logo: '/images/brands/parker.jpg', badge: 'Traded Brand' },
+  { id: 'legris', name: 'Legris India Pvt. Ltd.', logo: '/images/brands/legris.png', badge: 'Traded Brand' },
+  { id: 'trident', name: 'Trident Pneumatics Pvt. Ltd.', logo: '/images/brands/trident.png', badge: 'Traded Brand' },
+  { id: 'tubacex', name: 'Tubacex Service Solutions India Pvt. Ltd.', logo: '/images/brands/tubacex.png', badge: 'Traded Brand' },
+  { id: 'airnet', name: 'AirNet (Chicago Pneumatic Sales)', logo: '/images/brands/chicago-pneumatic.svg', badge: 'Traded Brand' },
 ];
 
 export default function BrandBar() {

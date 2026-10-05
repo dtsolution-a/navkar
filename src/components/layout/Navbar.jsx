@@ -76,10 +76,10 @@ export default function Navbar() {
       {/* ── Top bar ── */}
       <div className="hidden lg:flex items-center justify-end bg-[#060f38] text-white/60 text-xs py-2 px-8 gap-6">
         <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-1.5 hover:text-white transition-colors">
-          <Phone className="w-3 h-3" /> +91 XXXXXXXXXX
+          <Phone className="w-3 h-3" /> +91 90227 25714
         </a>
-        <a href="mailto:info@navkarengineering.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
-          <Mail className="w-3 h-3" /> info@navkarengineering.com
+        <a href="mailto:info@navkarengg.in" className="flex items-center gap-1.5 hover:text-white transition-colors">
+          <Mail className="w-3 h-3" /> info@navkarengg.in
         </a>
       </div>
 
@@ -302,8 +302,8 @@ export default function Navbar() {
                   )}
                   <Link to="/contact" className="btn-primary w-full justify-center">Contact Us</Link>
                   <div className="flex flex-col gap-2 text-xs text-gray-500 pt-1">
-                    <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-2 px-1"><Phone className="w-3.5 h-3.5" /> +91 XXXXXXXXXX</a>
-                    <a href="mailto:info@navkarengineering.com" className="flex items-center gap-2 px-1"><Mail className="w-3.5 h-3.5" /> info@navkarengineering.com</a>
+                    <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-2 px-1"><Phone className="w-3.5 h-3.5" /> +91 90227 25714</a>
+                    <a href="mailto:info@navkarengg.in" className="flex items-center gap-2 px-1"><Mail className="w-3.5 h-3.5" /> info@navkarengg.in</a>
                   </div>
                 </div>
               </div>

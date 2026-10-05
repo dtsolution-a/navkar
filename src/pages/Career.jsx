@@ -145,7 +145,7 @@ export default function Career() {
             </h1>
             <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
               Join a team that's been delivering technical excellence and ethical service to India's 
-              industrial sector for 30+ years. We invest in our people.
+              industrial sector for 2+ years. We invest in our people.
             </p>
           </motion.div>
         </div>
@@ -275,7 +275,7 @@ export default function Career() {
                         </a>
                       ) : (
                         <a
-                          href={`mailto:info@navkarengineering.com?subject=Application: ${job.title}`}
+                          href={`mailto:info@navkarengg.in?subject=Application: ${job.title}`}
                           className="btn-primary py-2.5 px-5 text-sm"
                         >
                           Apply Now

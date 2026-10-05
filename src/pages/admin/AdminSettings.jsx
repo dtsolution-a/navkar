@@ -101,7 +101,7 @@ export default function AdminSettings() {
                   type="email"
                   value={settings.email_others || ''}
                   onChange={e => setSettings({...settings, email_others: e.target.value})}
-                  placeholder="info@navkarengineering.com"
+                  placeholder="info@navkarengg.in"
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-accent outline-none transition-all"
                 />
               </div>

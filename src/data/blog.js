@@ -155,7 +155,7 @@ As Indian industry moves toward global quality standards, oil-free compressed ai
     slug: 'parker-hydraulic-systems-maintenance-tips',
     title: 'Parker Hydraulic Systems: Essential Maintenance Tips for Longevity',
     excerpt:
-      'Keep your Parker hydraulic systems running at peak performance with these expert maintenance tips from our 30+ years of field experience.',
+      'Keep your Parker hydraulic systems running at peak performance with these expert maintenance tips from our 2+ years of field experience.',
     content: `
 ## Introduction
 

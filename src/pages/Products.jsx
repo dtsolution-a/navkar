@@ -61,7 +61,7 @@ export default function Products() {
           >
             <p className="badge-blue mb-5">Product Catalog</p>
             <h1 className="heading-display text-[clamp(2rem,4vw,3.5rem)] text-gray-900 dark:text-white mb-4">
-              500+ Products, <span className="text-gradient">7+ Global Brands</span>
+              100+ Products, <span className="text-gradient">7+ 7+ Global Brands</span>
             </h1>
             <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
               Explore our complete range of pneumatic, hydraulic, instrumentation, 

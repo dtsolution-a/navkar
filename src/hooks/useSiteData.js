@@ -514,7 +514,7 @@ const fallbackHeroSlides = [
     id: 3,
     image: '/images/hero/slide-3.jpg',
     tag: 'Tubacex & Trident · Authorized Representative',
-    headline: '30+ Years of Technical Excellence in Surat, Gujarat',
+    headline: '2+ Years of Technical Excellence in Surat, Gujarat',
     sub: 'SS Tubes · Air Purification · Gas Generation · Clean Energy',
     accent: 'from-indigo-700/20 to-slate-950/60',
   },
@@ -678,7 +678,7 @@ export function useTimeline() {
             { year: '2008', event: 'Expanded product portfolio with hydraulics and instrumentation' },
             { year: '2015', event: 'Added Kaishan air compressors to the portfolio' },
             { year: '2020', event: 'Entered clean energy segment — CNG & Hydrogen fueling solutions' },
-            { year: '2025', event: 'Serving 5800+ clients across India with 500+ product lines' },
+            { year: '2025', event: 'Serving 5800+ clients across India with 100+ product lines' },
           ]);
           setLoading(false);
         }

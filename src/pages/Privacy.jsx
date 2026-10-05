@@ -72,7 +72,7 @@ export default function Privacy() {
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Navkar Engineering<br />
                 Ring Road, Surat – 395002, Gujarat<br />
-                Email: <a href="mailto:info@navkarengineering.com" className="text-accent hover:underline">info@navkarengineering.com</a>
+                Email: <a href="mailto:info@navkarengg.in" className="text-accent hover:underline">info@navkarengg.in</a>
               </p>
             </section>
           </div>

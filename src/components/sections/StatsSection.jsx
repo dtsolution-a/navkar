@@ -5,9 +5,9 @@ import { staggerContainer, staggerItem } from '../../hooks/useScrollAnimation';
 
 export default function StatsSection() {
   const stats = [
-    { num: '4+', label: 'Global Brands', icon: Globe },
-    { num: '500+', label: 'Products', icon: Package },
-    { num: '500+', label: 'Clients', icon: Users },
+    { num: '4+', label: '7+ Global Brands', icon: Globe },
+    { num: '100+', label: 'Products', icon: Package },
+    { num: '100+', label: 'Clients', icon: Users },
     { num: '24h', label: 'Response', icon: Clock },
   ];
 
