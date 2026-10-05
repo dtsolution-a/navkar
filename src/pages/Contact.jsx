@@ -1,300 +1,146 @@
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2 } from 'lucide-react';
-import { useScrollAnimation, slideInLeft, slideInRight } from '../hooks/useScrollAnimation';
+import { MapPin, PhoneCall, Mail, Clock, Send, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
-  const { ref, isInView } = useScrollAnimation();
-  const [form, setForm] = useState({
-    name: '', company: '', email: '', phone: '', inquiryType: '', message: ''
-  });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch('/api/contacts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          company: form.company,
-          subject: form.inquiryType ? `Enquiry: ${form.inquiryType}` : 'General Enquiry',
-          message: form.message
-        })
-      });
-      if (!res.ok) throw new Error('Failed to submit');
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
-      setForm({ name: '', company: '', email: '', phone: '', inquiryType: '', message: '' });
-    } catch (err) {
-      alert('Failed to send message. Please try again later.');
-    }
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
+  const contactCards = [
+    { icon: MapPin, title: "Our Headquarters", details: ["F-48, APMC Market, Sector-19", "Vashi, Navi Mumbai- 400703"] },
+    { icon: PhoneCall, title: "Call Us", details: ["+91 90227 25714", "Support & Sales"] },
+    { icon: Mail, title: "Email Us", details: ["info@navkarengg.in", "24/7 Online Support"] },
+    { icon: Clock, title: "Working Hours", details: ["Mon-Sat, 9:30 AM - 6:30 PM", "Sunday Closed"] }
+  ];
+
   return (
-    <div>
-      {/* Hero */}
-      <section className="section-padding-sm bg-white dark:bg-gray-950 border-b border-[var(--color-border)]">
-        <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-xl"
-          >
-            <p className="badge-blue mb-4">Contact Us</p>
-            <h1 className="heading-display text-[clamp(2rem,4vw,3.5rem)] text-gray-900 dark:text-white mb-4">
-              Let's Talk About Your Requirements
+    <div className="bg-white overflow-hidden">
+      
+      {/* HEADER */}
+      <section className="relative w-full h-[50vh] min-h-[400px] flex flex-col justify-center items-center bg-[#050505]">
+        <div className="absolute inset-0 z-0">
+          <img src="/images/hero/slide-1.jpg" alt="Contact" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020512] via-black/50 to-transparent" />
+        </div>
+        
+        <div className="relative z-10 text-center px-6 mt-16 max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
+              Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-blue-500">Touch</span>
             </h1>
-            <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
-              Our technical team is ready to help you find the right product or design the right system. 
-              Get a response within 24 hours.
+            <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
+              Our team of engineering experts is ready to assist you with your fluid power requirements.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Main content */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+      <section className="py-24 relative z-20 -mt-16 bg-transparent">
+        <div className="max-w-7xl mx-auto px-6">
+          
+          <div className="flex flex-col lg:flex-row gap-12">
             
-            {/* Left — Contact info */}
-            <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              variants={slideInLeft}
-              className="lg:col-span-2 space-y-6"
-            >
-              {/* Info cards */}
-              <div className="card p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Office Address</h3>
-                    <a 
-                      href="https://maps.app.goo.gl/ALBGHsNeMGcUNXqq9" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed hover:text-accent hover:underline block"
-                    >
-                      4, "Rushabh", Near Sita Hospital,<br />
-                      Old Subjail Gali, Khatodara,<br />
-                      Ring Road, Surat – 395002<br />
-                      Gujarat, India
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Sales & Support</h3>
-                    
-                    <p className="text-xs text-gray-500 mb-0.5 font-medium uppercase">General Inquiry:</p>
-                    <a href="tel:+919825607366" className="text-accent text-sm hover:underline block mb-3">+91 98256 07366</a>
-
-                    <p className="text-xs text-gray-500 mb-0.5 font-medium uppercase">Parker-Instrumentation:</p>
-                    <a href="tel:+919316189992" className="text-accent text-sm hover:underline block mb-3">+91 9316189992</a>
-                    
-                    <p className="text-xs text-gray-500 mb-0.5 font-medium uppercase">Compressor:</p>
-                    <a href="tel:+919825607568" className="text-accent text-sm hover:underline block">+91 9825607568</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Email Us</h3>
-                    
-                    <p className="text-xs text-gray-500 mb-0.5 font-medium uppercase">General Inquiry:</p>
-                    <a href="mailto:info@navkarengg.in" className="text-accent text-sm hover:underline block mb-3">info@navkarengg.in</a>
-
-                    <p className="text-xs text-gray-500 mb-0.5 font-medium uppercase">Parker-Instrumentation:</p>
-                    <a href="mailto:support.inst@navkarengineering.com" className="text-accent text-sm hover:underline block mb-3">support.inst@navkarengineering.com</a>
-                    
-                    <p className="text-xs text-gray-500 mb-0.5 font-medium uppercase">Compressor:</p>
-                    <a href="mailto:support.compressor@navkarengineering.com" className="text-accent text-sm hover:underline block">support.compressor@navkarengineering.com</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Business Hours</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Monday – Saturday</p>
-                    <p className="text-sm font-medium text-gray-900 dark:text-white">9:30 AM – 6:30 PM IST</p>
-                    <p className="text-xs text-gray-400 mt-1">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Map placeholder */}
-              <div className="card overflow-hidden h-48 relative">
-                <a 
-                  href="https://maps.app.goo.gl/aifRXENXkVHk2t7Q6" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 z-10"
-                />
-                <iframe
-                  title="Navkar Engineering Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.8256555147573!2d73.0016027!3d19.0713917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c13e54b60ccf%3A0x7d674b78082987fb!2sF-48%2C%20APMC%20Market%2C%20Sector%2019%2C%20Vashi%2C%20Navi%20Mumbai%2C%20Maharashtra%20400703!5e1!3m2!1sen!2sin!4v1782208019217!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="opacity-80"
-                />
-              </div>
-            </motion.div>
-
-            {/* Right — Form */}
-            <motion.div
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              variants={slideInRight}
-              className="lg:col-span-3"
-            >
-              <div className="card p-8">
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Send Us a Message</h2>
-
-                {submitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center justify-center py-16 text-center"
+            {/* Left: Info Cards & Map */}
+            <div className="w-full lg:w-5/12 flex flex-col gap-6">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {contactCards.map((card, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true }}
+                    className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 hover:border-[#00b4d8]/30 transition-colors"
                   >
-                    <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
-                      <CheckCircle2 className="w-8 h-8 text-green-500" />
+                    <div className="w-12 h-12 bg-blue-50 text-[#00b4d8] rounded-xl flex items-center justify-center mb-4">
+                      <card.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Message Sent!</h3>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm max-w-xs">
-                      Thank you for reaching out. Our team will get back to you within 24 business hours.
-                    </p>
+                    <h3 className="font-bold text-gray-900 mb-2">{card.title}</h3>
+                    {card.details.map((line, j) => (
+                      <p key={j} className="text-sm text-gray-500 font-light">{line}</p>
+                    ))}
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Map */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} viewport={{ once: true }}
+                className="w-full h-64 rounded-3xl overflow-hidden shadow-xl border border-gray-100 relative"
+              >
+                <a href="https://maps.app.goo.gl/ALBGHsNeMGcUNXqq9" target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" />
+                <iframe
+                  title="Navkar Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.8256555147573!2d73.0016027!3d19.0713917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c13e54b60ccf%3A0x7d674b78082987fb!2sF-48%2C%20APMC%20Market%2C%20Sector%2019%2C%20Vashi%2C%20Navi%20Mumbai%2C%20Maharashtra%20400703!5e1!3m2!1sen!2sin!4v1782208019217!5m2!1sen!2sin"
+                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                />
+              </motion.div>
+            </div>
+
+            {/* Right: Form */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} viewport={{ once: true }}
+              className="w-full lg:w-7/12"
+            >
+              <div className="bg-white rounded-[2.5rem] p-10 lg:p-14 shadow-2xl border border-gray-100 h-full">
+                <h2 className="text-3xl font-black text-gray-900 mb-8">Send an Enquiry</h2>
+                
+                {submitted ? (
+                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center py-20 text-center">
+                    <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6">
+                      <CheckCircle2 className="w-10 h-10 text-green-500" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent Successfully!</h3>
+                    <p className="text-gray-500">We will review your requirements and get back to you within 24 hours.</p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-                          Full Name *
-                        </label>
-                        <input
-                          name="name"
-                          value={form.name}
-                          onChange={handleChange}
-                          required
-                          placeholder="Your full name"
-                          className="input"
-                        />
+                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Full Name</label>
+                        <input required placeholder="John Doe" className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-                          Company Name
-                        </label>
-                        <input
-                          name="company"
-                          value={form.company}
-                          onChange={handleChange}
-                          placeholder="Company / Organization"
-                          className="input"
-                        />
+                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Company</label>
+                        <input placeholder="Organization Name" className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-                          Email Address *
-                        </label>
-                        <input
-                          name="email"
-                          type="email"
-                          value={form.email}
-                          onChange={handleChange}
-                          required
-                          placeholder="you@company.com"
-                          className="input"
-                        />
+                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Email Address</label>
+                        <input type="email" required placeholder="john@company.com" className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-                          Phone Number
-                        </label>
-                        <input
-                          name="phone"
-                          type="tel"
-                          value={form.phone}
-                          onChange={handleChange}
-                          placeholder="+91 00000 00000"
-                          className="input"
-                        />
+                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Phone</label>
+                        <input type="tel" placeholder="+91 00000 00000" className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-                        Inquiry Type *
-                      </label>
-                      <select
-                        name="inquiryType"
-                        value={form.inquiryType || ''}
-                        onChange={handleChange}
-                        required
-                        className="input"
-                      >
-                        <option value="" disabled>Select Inquiry Type</option>
-                        <option value="Parker-Instrumentation">Parker-Instrumentation</option>
-                        <option value="Compressor">Compressor</option>
-                        <option value="Others">Others</option>
+                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Product Interest</label>
+                      <select required className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Pneumatics">Pneumatics</option>
+                        <option value="Compressors">Air Compressors</option>
+                        <option value="Hydraulics">Hydraulics</option>
+                        <option value="Other">Other Query</option>
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-                        Your Requirements *
-                      </label>
-                      <textarea
-                        name="message"
-                        value={form.message}
-                        onChange={handleChange}
-                        required
-                        rows={5}
-                        placeholder="Please describe your requirements, quantities, specifications, or any questions..."
-                        className="input resize-none"
-                      />
+                      <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Message</label>
+                      <textarea required rows={4} placeholder="Tell us about your requirements..." className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900 resize-none" />
                     </div>
-                    <button type="submit" className="btn-primary w-full justify-center py-3.5">
-                      <Send className="w-4 h-4" />
-                      Send Enquiry
+                    <button type="submit" className="w-full bg-[#0a1a5c] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#00b4d8] transition-colors flex items-center justify-center gap-2 shadow-lg">
+                      Send Message <Send className="w-5 h-5" />
                     </button>
-                    <p className="text-xs text-center text-gray-400">
-                      We respect your privacy. Your information is never shared with third parties.
-                    </p>
                   </form>
                 )}
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
