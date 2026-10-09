@@ -77,13 +77,13 @@ export default function Blog() {
             </div>
             
             {/* Tag Cloud */}
-            <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto mt-2">
-              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mr-2 flex items-center gap-2"><Filter className="w-4 h-4" /> Filter by Tag:</span>
+            <div className="flex flex-nowrap items-center gap-3 max-w-4xl mx-auto mt-2 overflow-x-auto scrollbar-hide pb-4 px-2 w-full">
+              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mr-2 flex items-center gap-2 shrink-0 whitespace-nowrap"><Filter className="w-4 h-4" /> Filter by Tag:</span>
               {allTags.map(tag => (
                 <button
                   key={tag}
                   onClick={() => setActiveTag(tag)}
-                  className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm ${activeTag === tag ? 'bg-[#0a1a5c] text-white shadow-md scale-105' : 'bg-white text-gray-500 border border-gray-100 hover:bg-gray-50 hover:text-[#00b4d8]'}`}
+                  className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 ${activeTag === tag ? 'bg-[#0a1a5c] text-white shadow-md border border-[#0a1a5c]' : 'bg-white text-gray-600 border border-gray-200 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-gray-300 hover:text-[#00b4d8]'}`}
                 >
                   {tag}
                 </button>
