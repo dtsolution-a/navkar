@@ -102,26 +102,26 @@ export default function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Full Name</label>
-                        <input required placeholder="John Doe" className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" />
+                        <input required placeholder="John Doe" className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300" />
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Company</label>
-                        <input placeholder="Organization Name" className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" />
+                        <input placeholder="Organization Name" className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Email Address</label>
-                        <input type="email" required placeholder="john@company.com" className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" />
+                        <input type="email" required placeholder="john@company.com" className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300" />
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Phone</label>
-                        <input type="tel" placeholder="+91 00000 00000" className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" />
+                        <input type="tel" placeholder="+91 00000 00000" className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300" />
                       </div>
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Product Interest</label>
-                      <select required className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900">
+                      <select required className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300">
                         <option value="" disabled selected>Select an option</option>
                         <option value="Pneumatics">Pneumatics</option>
                         <option value="Compressors">Air Compressors</option>
@@ -131,7 +131,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Message</label>
-                      <textarea required rows={4} placeholder="Tell us about your requirements..." className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900 resize-none" />
+                      <textarea required rows={4} placeholder="Tell us about your requirements..." className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300 resize-none" />
                     </div>
                     <button type="submit" className="w-full bg-[#0a1a5c] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#00b4d8] transition-colors flex items-center justify-center gap-2 shadow-lg">
                       Send Message <Send className="w-5 h-5" />

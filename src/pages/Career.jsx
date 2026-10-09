@@ -162,7 +162,7 @@ export default function Career() {
                       value={formState.name}
                       onChange={(e) => setFormState({...formState, name: e.target.value})}
                       placeholder="John Doe" 
-                      className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" 
+                      className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300" 
                     />
                   </div>
                   <div>
@@ -173,7 +173,7 @@ export default function Career() {
                       value={formState.email}
                       onChange={(e) => setFormState({...formState, email: e.target.value})}
                       placeholder="john@example.com" 
-                      className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" 
+                      className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300" 
                     />
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function Career() {
                       value={formState.phone}
                       onChange={(e) => setFormState({...formState, phone: e.target.value})}
                       placeholder="+91 00000 00000" 
-                      className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" 
+                      className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300" 
                     />
                   </div>
                   <div>
@@ -197,7 +197,7 @@ export default function Career() {
                       value={formState.role}
                       onChange={(e) => setFormState({...formState, role: e.target.value})}
                       placeholder="e.g. Mechanical Engineer, Marketing..." 
-                      className="w-full bg-gray-50 border-none rounded-xl py-4 px-5 outline-none focus:ring-2 focus:ring-[#00b4d8] text-gray-900" 
+                      className="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/10 text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all hover:border-gray-300" 
                     />
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function Career() {
                   <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Resume (PDF, Max 1MB) *</label>
                   <div 
                     onClick={() => fileInputRef.current?.click()}
-                    className={"w-full border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-colors " + (fileError ? "border-red-300 bg-red-50" : file ? "border-[#00b4d8] bg-blue-50" : "border-gray-200 bg-gray-50 hover:bg-gray-100")}
+                    className={"w-full border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-colors " + (fileError ? "border-red-300 bg-red-50" : file ? "border-[#00b4d8] bg-blue-50" : "border-gray-300 bg-gray-50 hover:bg-gray-100 hover:border-gray-400")}
                   >
                     <input 
                       type="file" 
